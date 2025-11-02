@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pixelize char game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>像素化字体</h1>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label for="textInput">输入文字：</label>
+                <input type="text" id="textInput" placeholder="输入要转换的文字" value="像素">
+            </div>
+
+            <div class="control-group">
+                <label for="gridSize">网格大小 (N×N)：<span class="value-display" id="gridSizeValue">32</span></label>
+                <div class="grid-display">
+                    <input type="range" id="gridSize" min="4" max="128" value="32" style="flex: 1;">
+                    <input type="number" id="gridSizeNum" min="4" max="128" value="32" style="width: 80px;">
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label for="threshold">亮度阈值 (%)：<span class="value-display" id="thresholdValue">50</span></label>
+                <div class="grid-display">
+                    <input type="range" id="threshold" min="0" max="100" value="50" style="flex: 1;">
+                    <input type="number" id="thresholdNum" min="0" max="100" value="50" style="width: 80px;">
+                </div>
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button class="generate-btn" id="generateBtn">✨ 生成</button>
+            <button class="download-btn" id="downloadBtn">📥 下载</button>
+            <button class="clear-btn" id="clearBtn">🗑️ 清空</button>
+        </div>
+
+        <div class="canvas-container">
+            <canvas id="pixelCanvas"></canvas>
+        </div>
+
+        <div class="info">
+            💡 提示：调整网格大小和亮度阈值可以获得不同的像素效果
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
