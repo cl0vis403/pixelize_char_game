@@ -135,12 +135,12 @@ function generateCharacterPixelData(char, gridSize, charSize) {
     tempCtx.fillRect(0, 0, charSize, charSize);
 
     const fontSize = Math.floor(charSize * 0.9);
-    tempCtx.font = `bold ${fontSize}px Arial, "Microsoft YaHei", sans-serif`;
+    tempCtx.font = `bold ${fontSize}px "Microsoft YaHei", sans-serif`;
     tempCtx.fillStyle = 'black';
     
     tempCtx.textAlign = 'center';
     tempCtx.textBaseline = 'middle';
-    const offsetY = charSize*0.05;
+    const offsetY = charSize*0.09;
     tempCtx.fillText(char, charSize / 2, charSize / 2 + offsetY);
 
     const imageData = tempCtx.getImageData(0, 0, charSize, charSize);
